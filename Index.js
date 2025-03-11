@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const PORT = process.env.PORT || 4000
+const port = process.env.port || 4000
 const urlroute  = require('./route/url')
 const staticroute  = require('./route/Static')
 const Userroute = require('./route/User')
@@ -22,4 +22,4 @@ app.use('/url', restrict(['Normal','Admin']), urlroute)
 app.use('/user',Userroute)
 
 app.use('/',staticroute)
-app.listen(PORT,()=>console.log(`Server listen in this ${PORT}`))
+app.listen(port,()=>console.log(`Server listen in this ${PORT}`))
