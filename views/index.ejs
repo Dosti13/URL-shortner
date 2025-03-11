@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin-top: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+/* Form styling */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* URL Generated text */
+p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+td {
+    background: #f9f9f9;
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/url" method="POST">
+            <label > Enter full Url </label>
+            <input type="text" name="Url" required placeholder="https://example.com">
+            <button type="submit"> click</button>
+        </form>
+    </div>
+    
+    <% if (locals.id) { %>   
+        <p>URL Generetaed : http:localhost:4000/url/<%= id %></p>
+        <% }  %>
+    <div>
+        <% if (locals.urls) { %> 
+            <% urls.forEach(url =>{ %>
+                <table border="2">
+                    <tbody>
+                    <tr>
+                        <th>Shortid</th>
+                        <th>redirecturl</th>
+                        <th>visithistorylength</th>
+                        <th>User Email</th>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td><%= url.Shortid %> </td>     
+                        <td> <%= url.redirecturl %>  </td>   
+              <td> <%= url.visithistor.length  %></td>
+              
+                <td> <%= url.createdBy.email  %></td>
+    
+            </tr></tbody> </table>     
+        <% } ) %>
+        <% }  %>
+    
+</body>
+</html>
