@@ -23,4 +23,4 @@ app.use('/url', restrict(['Normal','Admin']), urlroute)
 app.use('/user',Userroute)
 
 app.use('/',staticroute)
-app.listen(port,()=>console.log(`Server listen in this ${PORT}`))
+app.listen(port,()=>console.log(`Server listen in this ${port}`))
