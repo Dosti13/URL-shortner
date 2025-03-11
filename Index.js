@@ -10,6 +10,7 @@ const {checkForAuthentication,restrict} = require("./middlewear/Auth")
 require("dotenv").config()
 
 app.set("view engine","ejs")
+app.set("views", path.join(__dirname, "views"));
 connect()
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
