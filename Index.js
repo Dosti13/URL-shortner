@@ -1,9 +1,10 @@
 const express = require("express")
 const app = express()
-const port = process.env.port || 4000
+const port = process.env.PORT || 4000
 const urlroute  = require('./route/url')
 const staticroute  = require('./route/Static')
 const Userroute = require('./route/User')
+const path = require("path")
 const connect = require ('./db/db')
 const cookieparser = require("cookie-parser")
 const {checkForAuthentication,restrict} = require("./middlewear/Auth")
